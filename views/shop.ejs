@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+   background-color: rgb(27, 187, 67);
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  color: black;
+}
+    </style>
+</head>
+<body>
+    <main >
+        <nav class="main-header__item-list" class="topnav">  
+            <a class="main-header__item-list" class="active" href="/">Trang chủ</a>
+            <a class="main-header__item-list" class="active" href="/shop">Sản phẩm</a>
+            <a class="main-header__item-list"  href="/addnew">Thêm sản phẩm</a>            
+        </nav>
+        <section  style="text-align: center;">
+            <div class="grid">
+                <% for (let product of products) { %>
+                <article class="card product-item">
+                <header class="card__header">
+                <h1 class="product__title"><%= product.title %></h1>
+                </header>
+                <div class="card__image">
+                <img src="images/<%= product.imageURL %>" alt="A Book">
+                </div>
+                <div class="card__content">
+                <h2 class="product__price">$<%= product.price %></h2>
+                <p class="product__description"><%=product.description %></p>
+                </div>
+                <div class="card__actions">
+                <button class="btn">Add to Cart</button>
+                </div>
+                </article>
+                <% } %>
+                </div>
+        </section>
+    </main>
+</body>
+</html>
